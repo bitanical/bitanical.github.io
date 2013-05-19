@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }} &larr; {{ site.name }}</title>
+        <meta name="description" content="{{ site.description }}">
+        <meta name="author" content="{{ site.author.name }}">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="{{ site.url }}/css/app{{ site.asset_ext }}css">
+        <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/atom.xml" title="RSS Feed">
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    </head>
+    <body>
+
+      <header id="top">
+        <div class="wrapper">
+          <!-- <ul id="menu"> -->
+          <!--   <li><a href="{{ site.url }}/about/">about</a></li> -->
+          <!-- </ul> -->
+          <a href="{{ site.url }}"><h1>{{ site.name }}</h1></a>
+        </div>
+      </header>
+
+      <div class="wrapper">
+
+        {{ content }}
+
+        {% if paginator.total_pages > 1 %}
+        <nav>
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+          <a href="{{ site.url }}">Previous</a>
+          {% else %}
+          <a href="{{ site.url }}/page{{ paginator.previous_page }}">Previous</a>
+          {% endif %}
+        {% else %}
+          <span>Previous</span>
+        {% endif %}
+        {% if paginator.next_page %}
+          <a href="{{ site.url }}/page{{ paginator.next_page }}" class="right">Next</a>
+        {% else %}
+          <span class="right">Next</span>
+        {% endif %}
+        </nav>
+        {% endif %}
+
+        <footer>
+          <a class="top" href="#top">Top</a>
+          Copyright &copy; 2010-2013 {{ site.author.name }}
+        </footer>
+
+      </div>
+
+      {% if site.analytics %}
+      <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ site.analytics.account }}']);
+        _gaq.push(['_setDomainName', '{{ site.analytics.domain }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+
+       </script>
+      {% endif %}
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="{{ site.url }}/js/jquery-1.9.1.min.js"><\/script>')</script>
+      <script src="{{ site.url }}/js/app{{ site.asset_ext }}js"></script>
+
+
+    </body>
+</html>

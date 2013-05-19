@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article>
+  <div class="content">
+    {% if page.image %}
+    <img class="post-image" src="{{ site.url }}/images/posts/{{ page.image }}" alt="{{ page.title }}" border="0">
+    {% endif %}
+    <header><h2>{{ page.title }}</h2></header>
+    <section>
+      {{ content }}
+    </section>
+  </div>
+</article>

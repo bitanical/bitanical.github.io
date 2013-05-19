@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article>
+  <div class="content">
+    {% if page.image %}
+    <img class="post-image" src="{{ site.url }}/images/posts/{{ page.image }}" alt="{{ page.title }}" border="0">
+    {% endif %}
+    <header><a href="{{ site.url }}{{ page.url }}"><h2>{{ page.title }}</h2></a></header>
+    <section>
+      {{ content }}
+    </section>
+    <footer>
+      <a href="{{ site.url }}{{ page.url }}">{{ page.date | date_to_long_string }}</a>
+    </footer>
+  </div>
+</article>

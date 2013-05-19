@@ -1,0 +1,27 @@
+name: Bitanical
+pygments: true
+include: [".htaccess"]
+exclude: ["README.md", "Rakefile", "Gemfile.lock", "Gemfile", "package.json", "Gruntfile.js", "bower.json"]
+# permalink: /posts/:title
+permalink: pretty
+markdown: rdiscount
+timezone: "America/New_York"
+paginate: 5
+title: "Bitanical, LLC"
+# Production
+# url: http://bitanical.com
+# url: http://bitanical.github.io
+# asset_ext: '.min.'
+# Development
+url: http://localhost:4000
+asset_ext: '.'
+description: "Bitanical, LLC"
+disqus_shortname: bitanical
+# analytics:
+#   account: "UA-281719-9"
+#   domain: "patrickward.com"
+author:
+  name: Patrick Ward
+  github: bitanical
+  twitter: bitanical
+  email: patrick@bitanical.com

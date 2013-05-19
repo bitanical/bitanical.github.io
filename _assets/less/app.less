@@ -1,0 +1,342 @@
+//
+// color variables
+//
+@color-article-footer:      #9C9C9C;
+@color-background:          #dedede;
+@color-footer:              #9a9a9a;
+@color-footer-article:      #CACACA;
+@color-footer-link:         #888;
+@color-h1:                  #393935;
+@color-h2:                  #5b5b57;
+@color-header-background:   #ffffff;
+@color-header-shadow:       #aaaaaa;
+@color-link:                #1171b2;
+@color-link-disabled:       #999999;
+@color-link-hover:          #44c6f6;
+@color-link-light:          #33b5e5;
+@color-main:                #333333;
+@color-wrapper-background:  #ffffff;
+@color-wrapper-border:      #d2d2c8;
+@color-blockquote-background: #efefef;
+
+//
+// Modular Scale (perfect-fourths)
+// Base on the Perfect 4th scale (3:4)
+// 16px @ 1:1.333
+//
+@ms-perfect-fourth: 1.333em;
+@ms-h1: 3.157em;
+@ms-h2: 2.369em;
+@ms-h3: 1.777em;
+@ms-h4: @ms-perfect-fourth;
+@ms-h5: 1.0em;
+@ms-h6: 0.75em;
+
+//
+// Mixins
+//
+.title (@color, @size, @margin: 1em) {
+  color: @color;
+  font-size: @size;
+  font-weight: 100;
+  line-height: 1em;
+  margin: @margin 0 @margin 0;
+}
+
+.link-color(@color, @color-hover) {
+  color: @color;
+
+  &:hover {
+    color: @color-hover;
+  };
+}
+
+.box-shadow (@shadow) {
+  -moz-box-shadow: @shadow;
+  -webkit-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+@import "normalize.less";
+
+// Load fonts
+// @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100);
+// @import url(http://fonts.googleapis.com/css?family=Noto+Serif|Roboto+Slab:700);
+// @import url(http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300|Open+Sans:400italic,400,700);
+
+// Syntax coloration
+@import "pygments_solarized.less";
+
+// General tags
+body {
+  background: @color-background;
+  color: @color-main;
+  // font-family: Roboto, Arial, sans-serif;
+  // font-family: 'Noto Serif', serif;
+  font-family: 'Open Sans', serif;
+  font-size: 1em;
+  line-height: @ms-perfect-fourth;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  .link-color(@color-link, @color-link-hover);
+}
+
+p {
+  font-size: 1em;
+  font-weight: 300;
+  margin: 0 0 1em 0;
+}
+
+h1 { .title(@color-h1, @ms-h1, @ms-h4); }
+h2 { .title(@color-h2, @ms-h2, @ms-h5); }
+h3 { .title(@color-h2, @ms-h3, @ms-h6); }
+h4 { .title(@color-h2, @ms-h4, @ms-h6); }
+h5 { .title(@color-h2, @ms-h5, @ms-h6); }
+h6 { .title(@color-h2, @ms-h6, @ms-h6); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+
+blockquote {
+  margin: 1em 0 1em 0;
+  padding: 1em;
+  color: @color-main;
+  background-color: @color-blockquote-background;
+  .border-radius(4px);
+
+  p { margin: 0; }
+}
+
+footer a { .link-color(@color-footer-link, @color-link-hover); }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: inherit;
+
+    tr {
+      background-color: #FFFFFF;
+      border-top: 1px solid #CCCCCC;
+
+      &:nth-child(2n) {
+        background-color: #F8F8F8;
+      }
+    }
+
+    th, td {
+      border: 1px solid #CCCCCC;
+      padding: 6px 13px;
+    }
+}
+
+// Wrapper and utilities
+
+.wrapper {
+  margin: 0 auto;
+  padding: 1em;
+  width: 70%;
+}
+
+.right { float: right; }
+
+// Site Header definition
+
+header#top {
+  background: @color-header-background;
+  .box-shadow(0 2px 6px @color-header-shadow);
+
+  margin-bottom: 1em;
+
+  .wrapper { width: 70%; }
+
+  h1 { .title(@color-h1, @ms-h2, 0); }
+
+  ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: right;
+
+      a {
+        display: inline-block;
+        font-size: 1em;
+        .link-color(@color-link, @color-link-hover);
+        padding: 0.5em;
+      }
+    }
+  }
+}
+
+.wrapper {
+
+  // Navigation Definition
+  nav {
+    padding: 0 8% 1em;
+
+    span { color: @color-link-disabled; }
+  };
+
+  // Footer Definition
+  footer {
+    border-top: 1px solid @color-wrapper-border;
+    color: @color-footer;
+    font-size: 0.7em;
+    padding: 1em 0.3em 0 0.5em;
+
+    a { .link-color(@color-footer-link, @color-link-hover); }
+    .top { float: right; }
+  }
+
+  // Article definition
+  article {
+    padding: 1em 4.5em;
+    position: relative;
+
+    .content {
+      background: @color-wrapper-background;
+      border: 1px solid @color-wrapper-border;
+      .border-radius(4px);
+      .box-shadow(0 4px 2px @color-header-shadow);
+      padding: 1em;
+
+      header {
+        min-height: 3em;
+        min-width: 100%;
+
+        h2{
+          margin-top: 0;
+          &.linked {
+            .link-color(@color-h1, @color-link-hover);
+          }
+        }
+
+      }
+
+      section {
+        padding: 0 1em;
+
+        h1,h2,h3 {
+          padding: 0.5em 0;
+        }
+      }
+
+      footer {
+        border-top: 1px solid @color-wrapper-border;
+        color: @color-footer-article;
+        font-size: 0.8em;
+        margin: 1em 1em 0 1em;
+      }
+    }
+  }
+}
+
+
+// 404 - Page not found
+.page-not-found {
+  margin: 30px auto;
+  text-align: center;
+  width: 500px;
+  h2 {
+    margin-top: 0;
+  }
+  a {
+    text-transform: uppercase;
+  }
+}
+
+// TinyNav
+.tinynav {
+  display: none;
+  margin: 10px auto;
+  min-width: 200px;
+}
+
+
+//
+// Responsive design
+//
+
+.post-image {
+  width: 100%;
+  margin: 0 0 1em 0;
+  border: 2px solid #000000;
+}
+
+// Tablet landscape
+@media screen and (max-width: 1024px) {
+  .wrapper { width: 94%; }
+}
+
+//Small tablet landscape and tablet portrait
+@media screen and (max-width: 800px) {
+
+  .tinynav { display: block; }
+  #menu    { display: none; }
+
+  header#top {
+    h1 {
+      margin: 0 auto;
+      text-align: center;
+    }
+    margin-bottom: 0;
+  }
+  .wrapper article { padding: 1em; }
+}
+
+// Mobile landscape
+@media screen and (max-width: 480px) {
+
+  header#top {
+    .wrapper {
+      padding: 0.2em 0;
+      width: 98%;
+      ul a {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 0;
+    width: 100%;
+
+    article .content {
+      padding: 0.5em;
+
+      section { padding: 0 0.5em; }
+    }
+  }
+}
+
+// Mobile portrait
+@media screen and (max-width: 320px) {
+
+  .wrapper article{
+    padding: 1em 0;
+
+    .content {
+      border-left: none;
+      .border-radius(0);
+      border-right: none;
+
+      section { padding: 0; }
+    }
+  }
+}
+
+@import "custom.less";
