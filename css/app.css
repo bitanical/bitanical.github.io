@@ -928,3 +928,13 @@ header#top h1 {
   width: 207px;
   height: 59px;
 }
+img.profile {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -moz-box-shadow: 0 2px 6px #aaaaaa;
+  -webkit-box-shadow: 0 2px 6px #aaaaaa;
+  box-shadow: 0 2px 6px #aaaaaa;
+  border: 1px solid #aaaaaa;
+  margin: 0 10px;
+}
