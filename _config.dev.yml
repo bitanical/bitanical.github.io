@@ -7,8 +7,8 @@ markdown: rdiscount
 timezone: "America/New_York"
 paginate: 5
 title: "Bitanical, LLC"
-url: http://bitanical.com
-asset_ext: '.min.'
+url: http://localhost:4000
+asset_ext: '.'
 description: "Bitanical, LLC"
 disqus_shortname: bitanical
 # analytics:
