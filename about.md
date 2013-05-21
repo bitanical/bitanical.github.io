@@ -11,8 +11,7 @@ Bitanical was formed to create simple, fun, and delightful software for web and 
 
 ### Is Bitanical Available for Consulting Work?
 
-Bitanical is focused on building simple products, so I'm not currently available for consulting work. If you would like to work with me on a custom project of yours, please contact **Denise Glass** at [Sensory 5](http://sensory5.com) where I work as the CTO and Chief Geek.
-
+Bitanical is focused on building simple products and not consulting on client work at present. If you would like to work with me on a custom project of yours, please contact **Denise Glass** at [Sensory 5](http://sensory5.com/contact/) where I work as the CTO and Chief Geek.
 
 ### The Bitanical Mission
 
