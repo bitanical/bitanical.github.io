@@ -10,7 +10,9 @@ title: "Bitanical, LLC"
 url: http://bitanical.com
 asset_ext: '.min.'
 description: "Bitanical, LLC"
-disqus_shortname: bitanical
+# disqus:
+#   shortname: bitanical
+#   hostname: http://bitanical.com
 # analytics:
 #   account: "UA-281719-9"
 #   domain: "patrickward.com"

@@ -9,6 +9,7 @@
     </section>
     <footer>
       <a href="{{ site.url }}{{ post.url }}">{{ post.date | date_to_long_string }}</a>
+      <a class="right" href="{{ site.url }}{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}"></a>
     </footer>
   </div>
 </article>
