@@ -10,6 +10,7 @@ title: "Bitanical, LLC"
 url: http://bitanical.com
 asset_ext: '.min.'
 description: "Bitanical, LLC"
+feed: http://bitanical.com/atom.xml
 # disqus:
 #   shortname: bitanical
 #   hostname: http://bitanical.com

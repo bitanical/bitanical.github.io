@@ -10,6 +10,7 @@ title: "Bitanical, LLC"
 url: http://localhost:4000
 asset_ext: '.'
 description: "Bitanical, LLC"
+feed: http://bitanical.com/atom.xml
 # disqus:
 #   shortname: bitanical
 #   hostname: http://bitanical.com
