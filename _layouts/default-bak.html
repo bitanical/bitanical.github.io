@@ -21,6 +21,13 @@
     </head>
     <body>
 
+      <header id="top">
+        <div class="wrapper">
+          {% include menu.html %}
+          <a href="{{ site.url }}"><h1>{{ site.name }}</h1></a>
+        </div>
+      </header>
+
       <div class="wrapper">
 
         {{ content }}
@@ -43,6 +50,11 @@
         {% endif %}
         </nav>
         {% endif %}
+
+        <footer>
+          <a class="top" href="#top">Top</a>
+          Copyright &copy; 2013 Bitanical, LLC
+        </footer>
 
       </div>
 
